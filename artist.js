@@ -128,7 +128,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumid}`)
     ).innerHTML += `<div class="wrap">
     <div class="album-container">
       <div class="album-img-container">
-        <img src="${body.cover}" alt="album cover" class="img" />
+        <img src="${body.cover_xl}" alt="album cover" class="img" />
       </div>
 
       <div class="album-content">
