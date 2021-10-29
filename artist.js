@@ -80,8 +80,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((body) => {
-    console.log(body.data);
-    console.log();
     let resp = body.data;
 
     resp.forEach((element) => {
@@ -115,5 +113,62 @@ fetch(
       </div>
     </div>
   </div>`);
+    });
+  });
+
+// album js
+
+let albumid = 69319552;
+
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumid}`)
+  .then((response) => response.json())
+  .then((body) => {
+    let artist = (document.getElementById(
+      "album"
+    ).innerHTML += `<div class="wrap">
+    <div class="album-container">
+      <div class="album-img-container">
+        <img src="${body.cover}" alt="album cover" class="img" />
+      </div>
+
+      <div class="album-content">
+        <h3 class="album">ALBUM</h3>
+
+        <h1 class="title">${body.title}</h1>
+
+        <h3 class="detail">
+          <img src="assets/drake.jpg " alt="" class="small-artist-img" />
+          <a href="./artist.html" class="album-link">${body.artist.name}</a>
+          <span class="detail-span">- ${body.release_date.substring(0, 4)} - ${
+      body.tracks.data.length
+    } songs, 1 hr 26 min</span>
+        </h3>
+      </div>
+    </div>
+
+    <div class="song-icons">
+      <i class="fas fa-play-circle album-icon-play"></i>
+
+      <i class="far fa-heart album-icon"></i>
+      <i class="fas fa-ellipsis-h album-icon"></i>
+    </div>
+  </div>`);
+
+    let resp = body.tracks.data;
+    console.log(resp);
+    resp.forEach((song) => {
+      console.log(song);
+      let container = (document.getElementById("song-list").innerHTML += `
+    <div class="song">
+<div class="left-number">
+  <p>1</p>
+</div>
+<div class="left-title">
+  <p>Champagne Poetry<br /><span class="title-span">Drake</span></p>
+</div>
+<div class="right-time">
+  <p>${song.duration}</p>
+</div>
+</div>`);
     });
   });
