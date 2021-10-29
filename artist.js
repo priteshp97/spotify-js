@@ -81,12 +81,11 @@ fetch(
   .then((response) => response.json())
   .then((body) => {
     console.log(body.data);
+    console.log();
     let resp = body.data;
-    resp.forEach((element) => {
-      console.log(element.album);
-    });
 
-    let albums = (document.getElementById("album-card").innerHTML += `
+    resp.forEach((element) => {
+      let albums = (document.getElementById("album-card").innerHTML += `
     
     <div
     class="col pr-0 d-flex justify-content-space-between"
@@ -94,7 +93,7 @@ fetch(
   >
     <div class="carbon-example flex-wrapper" style="position: relative">
       <img
-        src="${body.album}"
+        src="${element.album.cover_small}"
         style="
           position: absolute;
           left: 0px;
@@ -110,8 +109,9 @@ fetch(
         class="inner-wrapper"
         style="position: static; padding-left: 74px"
       >
-        <p>Liked Songs</p>
+        <p>${element.album.title}</p>
       </div>
     </div>
   </div>`);
+    });
   });
