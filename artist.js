@@ -72,6 +72,7 @@ function outputUpdate(vol) {
 
 // populate cards
 
+const albumCard = document.getElementById("album-card");
 let artistName = ["queen", "drake", "24kGoldn"];
 
 fetch(
@@ -81,5 +82,34 @@ fetch(
     return response.json();
   })
   .then((data) => {
-    console.log(data);
+    console.log(data.forEach(element.album));
+
+    let albums = (document.getElementById("album-card").innerHTML += `
+    
+    <div
+    class="col pr-0 d-flex justify-content-space-between"
+    id="album-card"
+  >
+    <div class="carbon-example flex-wrapper" style="position: relative">
+      <img
+        src="${data.album}"
+        style="
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          height: 70px;
+          object-fit: cover;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+        "
+        alt="example design logo"
+      />
+      <div
+        class="inner-wrapper"
+        style="position: static; padding-left: 74px"
+      >
+        <p>Liked Songs</p>
+      </div>
+    </div>
+  </div>`);
   });
