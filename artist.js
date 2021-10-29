@@ -200,7 +200,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/246791")
         let resp = body.data;
         console.log(resp);
         resp.forEach((element) => {
-          let pic = element.contributors[0].picture;
+          let number = resp.indexOf(element);
+          let pic = element.contributors[number].picture;
 
           let popular = (document.getElementById("popular-songs").innerHTML += `
             <div class="popular-inner-song">
