@@ -45,11 +45,24 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-          <img src="/assets/drake.jpg" width="20rem" style="border-radius: 50%;" alt="">
+            <img
+              src="/assets/drake.jpg"
+              width="20rem"
+              style="border-radius: 50%"
+              alt=""
+            />
             Diego 'Ziba'...
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: rgb(170, 166, 166);">
-            <a class="dropdown-item" href="https://open.spotify.com/user/3b4qb5oc2nrqp1hweo8tnke7v">Profile</a>
+          <div
+            class="dropdown-menu"
+            aria-labelledby="dropdownMenuButton"
+            style="background-color: rgb(170, 166, 166)"
+          >
+            <a
+              class="dropdown-item"
+              href="https://open.spotify.com/user/3b4qb5oc2nrqp1hweo8tnke7v"
+              >Profile</a
+            >
             <a class="dropdown-item" href="login-page.html">Settings</a>
             <a class="dropdown-item" href="login-page.html">Log Out</a>
           </div>
@@ -236,36 +249,10 @@
       </div>
     </aside>
     <!-- end of side bar -->
+
     <!-- album -->
 
-    <section id="album">
-      <div class="wrap">
-        <div class="album-container">
-          <div class="album-img-container">
-            <img src="./assets/album.png" alt="album cover" class="img" />
-          </div>
-
-          <div class="album-content">
-            <h3 class="album">ALBUM</h3>
-
-            <h1 class="title">Certified Lover Boy</h1>
-
-            <h3 class="detail">
-              <img src="assets/drake.jpg " alt="" class="small-artist-img" />
-              <a href="./artist.html" class="album-link">Drake</a>
-              <span class="detail-span">- 2021 - 21 songs, 1 hr 26 min</span>
-            </h3>
-          </div>
-        </div>
-
-        <div class="song-icons">
-          <i class="fas fa-play-circle album-icon-play"></i>
-
-          <i class="far fa-heart album-icon"></i>
-          <i class="fas fa-ellipsis-h album-icon"></i>
-        </div>
-      </div>
-    </section>
+    <section id="album"></section>
 
     <section class="song-list">
       <div class="wrap">
@@ -555,13 +542,23 @@
       <!-- end of middle -->
       <!-- start of right -->
       <div class="player-right">
-        
         <i class="fas fa-stream player-right-icon"></i>
         <i class="fas fa-laptop-house player-right-icon"></i>
-        <a href="#" onclick="muteFuntion()" style="color: rgb(199, 199, 199);"><i class="fas fa-volume-up player-right-icon"  ></i></a>
-        <label for=fader></label>
-        <input type=range min=0 max=100 value=50 id=fader step=10 style="width: 80px; border-color: white;" onchange="outputUpdate(value)">
-        <output for=fader id=volume></output>
+        <a href="#" onclick="muteFuntion()" style="color: rgb(199, 199, 199)"
+          ><i class="fas fa-volume-up player-right-icon"></i
+        ></a>
+        <label for="fader"></label>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          id="fader"
+          step="10"
+          style="width: 80px; border-color: white"
+          onchange="outputUpdate(value)"
+        />
+        <output for="fader" id="volume"></output>
       </div>
       <!-- end of right -->
     </footer>
