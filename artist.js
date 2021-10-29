@@ -78,21 +78,23 @@ let artistName = ["queen", "drake", "24kGoldn"];
 fetch(
   `https://striveschool-api.herokuapp.com/api/deezer/search?q=${artistName[1]}`
 )
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data.forEach(element.album));
+  .then((response) => response.json())
+  .then((body) => {
+    console.log(body.data);
+    console.log();
+    let resp = body.data;
 
-    let albums = (document.getElementById("album-card").innerHTML += `
+    resp.forEach((element) => {
+      let albums = (document.getElementById("album-card").innerHTML += `
     
     <div
     class="col pr-0 d-flex justify-content-space-between"
     id="album-card"
   >
     <div class="carbon-example flex-wrapper" style="position: relative">
-      <img
-        src="${data.album}"
+     
+    <img
+        src="${element.album.cover_small}"
         style="
           position: absolute;
           left: 0px;
@@ -104,12 +106,14 @@ fetch(
         "
         alt="example design logo"
       />
+      
       <div
         class="inner-wrapper"
         style="position: static; padding-left: 74px"
       >
-        <p>Liked Songs</p>
+      <a href="album.html" <p>${element.album.title}</p> </a>
       </div>
     </div>
   </div>`);
+    });
   });
