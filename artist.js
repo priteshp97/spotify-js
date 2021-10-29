@@ -153,26 +153,22 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumid}`)
       <i class="fas fa-ellipsis-h album-icon"></i>
     </div>
   </div>`);
-  });
 
-fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumid}`)
-  .then((response) => response.json())
-  .then((body) => {
     let resp = body.tracks.data;
     console.log(resp);
     resp.forEach((song) => {
       console.log(song);
       let container = (document.getElementById("song-list").innerHTML += `
-      <div class="song">
-  <div class="left-number">
-    <p>1</p>
-  </div>
-  <div class="left-title">
-    <p>Champagne Poetry<br /><span class="title-span">Drake</span></p>
-  </div>
-  <div class="right-time">
-    <p>${song.duration}</p>
-  </div>
+    <div class="song">
+<div class="left-number">
+  <p>1</p>
+</div>
+<div class="left-title">
+  <p>Champagne Poetry<br /><span class="title-span">Drake</span></p>
+</div>
+<div class="right-time">
+  <p>${song.duration}</p>
+</div>
 </div>`);
     });
   });
