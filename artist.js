@@ -78,11 +78,13 @@ let artistName = ["queen", "drake", "24kGoldn"];
 fetch(
   `https://striveschool-api.herokuapp.com/api/deezer/search?q=${artistName[1]}`
 )
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data.forEach(element.album));
+  .then((response) => response.json())
+  .then((body) => {
+    console.log(body.data);
+    let resp = body.data;
+    resp.forEach((element) => {
+      console.log(element.album);
+    });
 
     let albums = (document.getElementById("album-card").innerHTML += `
     
@@ -92,7 +94,7 @@ fetch(
   >
     <div class="carbon-example flex-wrapper" style="position: relative">
       <img
-        src="${data.album}"
+        src="${body.album}"
         style="
           position: absolute;
           left: 0px;
