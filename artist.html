@@ -253,20 +253,7 @@
 
     <!-- header -->
 
-    <header class="header">
-      <div class="wrapper header-container">
-        <div class="header-verified">
-          <i class="fas fa-check-circle header-verified-icon"></i>
-          <p>Verified Artist</p>
-        </div>
-        <div class="header-artist">
-          <p>Drake</p>
-        </div>
-        <div class="header-listeners">
-          <p>62,010,228 monthly listeners</p>
-        </div>
-      </div>
-    </header>
+    <header class="header" id="header"></header>
     <!-- end of header -->
 
     <!-- artist popular songs -->
@@ -282,80 +269,7 @@
         <div class="popular-grid">
           <div class="popular-grid-left">
             <h3 class="popular-left-title">Popular</h3>
-            <div class="popular-grid-left-inner">
-              <!-- start of song -->
-              <div class="popular-inner-song">
-                <p class="popular-inner-number">1</p>
-                <img
-                  src="./assets/album.png"
-                  alt=""
-                  class="popular-inner-img"
-                />
-                <p class="popular-inner-song-name">
-                  Way 2 Sexy (with Future & Young Thug)
-                </p>
-                <p class="popular-inner-listens">149,925,606</p>
-                <p class="popular-inner-time">4:17</p>
-              </div>
-              <!-- end of song -->
-              <!-- start of song -->
-              <div class="popular-inner-song">
-                <p class="popular-inner-number">2</p>
-                <img
-                  src="./assets/album.png"
-                  alt=""
-                  class="popular-inner-img"
-                />
-                <p class="popular-inner-song-name">
-                  Fair Trade (with Travis Scott)
-                </p>
-                <p class="popular-inner-listens">145,971,218</p>
-                <p class="popular-inner-time">4:51</p>
-              </div>
-              <!-- end of song -->
-              <!-- start of song -->
-              <div class="popular-inner-song">
-                <p class="popular-inner-number">3</p>
-                <img
-                  src="./assets/album.png"
-                  alt=""
-                  class="popular-inner-img"
-                />
-                <p class="popular-inner-song-name">
-                  Knife Talk (with 21 Savage ft. Project Pat)
-                </p>
-                <p class="popular-inner-listens">116,990,850</p>
-                <p class="popular-inner-time">4:02</p>
-              </div>
-              <!-- end of song -->
-              <!-- start of song -->
-              <div class="popular-inner-song">
-                <p class="popular-inner-number">4</p>
-                <img
-                  src="./assets/album.png"
-                  alt=""
-                  class="popular-inner-img"
-                />
-                <p class="popular-inner-song-name">
-                  Girls Want Girls (with Lil Baby)
-                </p>
-                <p class="popular-inner-listens">126,795,441</p>
-                <p class="popular-inner-time">3:41</p>
-              </div>
-              <!-- end of song -->
-              <!-- start of song -->
-              <div class="popular-inner-song">
-                <p class="popular-inner-number">5</p>
-                <img
-                  src="./assets/album.png"
-                  alt=""
-                  class="popular-inner-img"
-                />
-                <p class="popular-inner-song-name">Champagne Poetry</p>
-                <p class="popular-inner-listens">78,755,020</p>
-                <p class="popular-inner-time">5:36</p>
-              </div>
-              <!-- end of song -->
+            <div class="popular-grid-left-inner" id="popular-songs">
               <p class="see-more">SEE MORE</p>
             </div>
           </div>
@@ -621,13 +535,23 @@
       <!-- end of middle -->
       <!-- start of right -->
       <div class="player-right">
-        
         <i class="fas fa-stream player-right-icon"></i>
         <i class="fas fa-laptop-house player-right-icon"></i>
-        <a href="#" onclick="muteFuntion()" style="color: rgb(199, 199, 199);"><i class="fas fa-volume-up player-right-icon"  ></i></a>
-        <label for=fader></label>
-        <input type=range min=0 max=100 value=50 id=fader step=10 style="width: 80px; border-color: white;" onchange="outputUpdate(value)">
-        <output for=fader id=volume></output>
+        <a href="#" onclick="muteFuntion()" style="color: rgb(199, 199, 199)"
+          ><i class="fas fa-volume-up player-right-icon"></i
+        ></a>
+        <label for="fader"></label>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          id="fader"
+          step="10"
+          style="width: 80px; border-color: white"
+          onchange="outputUpdate(value)"
+        />
+        <output for="fader" id="volume"></output>
       </div>
       <!-- end of right -->
     </footer>

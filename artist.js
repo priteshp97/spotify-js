@@ -172,3 +172,53 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumid}`)
 </div>`);
     });
   });
+
+// artist page
+
+fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/246791")
+  .then((response) => {
+    return response.json();
+  })
+  .then((body) => {
+    console.log(body);
+    let header = (document.getElementById("header").innerHTML += `
+    <div class="wrapper header-container">
+        <div class="header-verified">
+          <i class="fas fa-check-circle header-verified-icon"></i>
+          <p>Verified Artist</p>
+        </div>
+        <div class="header-artist">
+          <p>${body.name}</p>
+        </div>
+        <div class="header-listeners">
+          <p>62,010,228 monthly listeners</p>
+        </div>
+      </div>`);
+    fetch(`${body.tracklist}`)
+      .then((response) => response.json())
+      .then((body) => {
+        let resp = body.data;
+        console.log(resp);
+        resp.forEach((element) => {
+          let number = resp.indexOf(element);
+          let pic = element.contributors[number].picture;
+
+          let popular = (document.getElementById("popular-songs").innerHTML += `
+            <div class="popular-inner-song">
+                    <p class="popular-inner-number">${
+                      resp.indexOf(element) + 1
+                    }</p>
+                    <img
+                      src="${pic}"
+                      alt=""
+                      class="popular-inner-img"
+                    />
+                    <p class="popular-inner-song-name">
+                      ${element.title}
+                    </p>
+                    <p class="popular-inner-listens">149,925,606</p>
+                    <p class="popular-inner-time">${element.duration}</p>
+                  </div>`);
+        });
+      });
+  });
