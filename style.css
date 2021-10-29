@@ -450,3 +450,12 @@ hr {
   max-height: 230px;
   overflow: hidden;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}

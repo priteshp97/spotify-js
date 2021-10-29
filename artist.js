@@ -92,7 +92,8 @@ fetch(
     id="album-card"
   >
     <div class="carbon-example flex-wrapper" style="position: relative">
-      <img
+     
+    <img
         src="${element.album.cover_small}"
         style="
           position: absolute;
@@ -105,11 +106,12 @@ fetch(
         "
         alt="example design logo"
       />
+      
       <div
         class="inner-wrapper"
         style="position: static; padding-left: 74px"
       >
-        <p>${element.album.title}</p>
+      <a href="album.html" <p>${element.album.title}</p> </a>
       </div>
     </div>
   </div>`);
